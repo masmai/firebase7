@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "394157430249",
+    "firebase_url": "https://pwsw-hospital.firebaseio.com",
+    "project_id": "pwsw-hospital",
+    "storage_bucket": "pwsw-hospital.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394157430249:android:5ffcf3ce4ebb3729bba778",
+        "android_client_info": {
+          "package_name": "com.firebase7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394157430249-46sndpgrnldefqu3snfvttnmcn659kkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChCcB7QdOywPYKsNKgWQuaSaqzXnk6rZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394157430249-46sndpgrnldefqu3snfvttnmcn659kkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
