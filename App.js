@@ -6,10 +6,12 @@ import { localNotificationService } from './app/Notification/LocalNotificationSe
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, SettingsScreen, ProfileScreen, TodoListScreen,AddTodoScreen } from './Page'
+import { HomeScreen, SettingsScreen, ProfileScreen, TodoListScreen, AddTodoScreen, TaskDetailScreen } from './Page'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import auth from '@react-native-firebase/auth';
 import { authService } from './app/Auth/AuthService';
+import ScannerScreen from './Page/ScannerScreen';
+
 // create a component
 const App = () => {
   const [initializing, setInitializing] = useState(true);
@@ -173,25 +175,31 @@ const App = () => {
     //     </TouchableOpacity>
 
     // </View>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{
-          //headerTransparent: true,
-          //headerShown:false
-          headerBackground: () => (
-            <View style={[StyleSheet.absoluteFill, { backgroundColor: '#35d0ba' }]} />
-          ),headerRight:()=>(<TouchableOpacity onPress={onSignOut}><Text>logout</Text></TouchableOpacity>)
-        }} name="Hospital" component={HomeTabs} />
+    
+
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen options={{
+              //headerTransparent: true,
+              //headerShown:false
+              headerBackground: () => (
+                <View style={[StyleSheet.absoluteFill, { backgroundColor: '#35d0ba' }]} />
+              ), headerRight: () => (<TouchableOpacity onPress={onSignOut}><Text>logout</Text></TouchableOpacity>)
+            }} name="Hospital" component={HomeTabs} />
 
 
 
-         <Stack.Screen name="AddTodo2" component={AddTodoScreen} />
-        {/*<Stack.Screen name="Chat" component={Chat} />
+            <Stack.Screen name="AddTodo2" component={AddTodoScreen} />
+           
+            <Stack.Screen name="taskDetail" component={TaskDetailScreen} />
+            <Stack.Screen name="ScannerScreen" component={ScannerScreen}/>
+            {/*<Stack.Screen name="Chat" component={Chat} />
         <Stack.Screen name="RosterList" component={RosterList} />
         <Stack.Screen name="CreateAccount" component={CreateAccount} />
         <Stack.Screen name="Login" component={Login} /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
+          </Stack.Navigator>
+        </NavigationContainer>
+     
   );
   // 
 };

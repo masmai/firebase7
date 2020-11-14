@@ -1,7 +1,7 @@
 import messaging from '@react-native-firebase/messaging';
 import { Platform } from 'react-native';
 import { localNotificationService } from './LocalNotificationService';
-
+import {userRepo, UserRepo} from '../Database/UserRepo'
 class FCMService {
     register = (onRegister, onNotification, onOpenNotification) => {
         this.checkPermission(onRegister);
@@ -33,8 +33,10 @@ class FCMService {
     getToken = (onRegister) => {
         messaging().getToken()
             .then(fcmToken => {
-                console.warn(fcmToken);
+                
                 if (fcmToken) {
+                    
+                    userRepo.Update({fcmToken:fcmToken});
                     onRegister(fcmToken)
                 } else {
                     console.log("[FCMService] User does not have a devices token")
